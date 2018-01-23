@@ -1,7 +1,10 @@
 const form=document.querySelector('#task-form');
 const taskList=document.querySelector('.collection');
 const taskInput=document.querySelector('#task');
-const clearBtn=document.querySelector('#clrBtn')
+const clearBtn=document.querySelector('#clrBtn');
+const main=document.querySelector('#main');
+const header=document.querySelector('#h5');
+
 
 taskEvent();
 
@@ -18,11 +21,17 @@ function taskEvent(){
 
 function addList(e){
     if(taskInput.value==='') {
-        alert('Add a task');
+        alert('Add a task!!');
     }
     else {
         const li=document.createElement('li');
-        li.className='collection-item';
+
+        if(flag===1)
+            li.className='collection-item blue-grey darken-1';
+        else {
+            li.className='collection-item ';
+        }
+
         li.appendChild(document.createTextNode(taskInput.value));
 
         const link=document.createElement('a');
@@ -72,6 +81,10 @@ function clearTask(){
     clearLocal();
 }
 
+function clearLocal(){
+    localStorage.clear();
+}
+
 
 function getLocal(){
     let tasks;
@@ -111,7 +124,21 @@ function removeLocal(taskItem){
     localStorage.setItem('tasks',JSON.stringify(tasks));
 }
 
+var flag=0;
 
-function clearLocal(){
-    localStorage.clear();
+function toggle(){
+    if(main.className==="card opacity"){
+        flag=1;
+        main.className+=" blue-grey darken-1";
+        main.firstElementChild.className+=" white-text";
+        header.className="white-text";
+        
+    }
+    else{
+        flag=0;
+        main.className="card opacity";
+        main.firstElementChild.className="card-content";
+        header.className="card-title";
+    }
 }
+

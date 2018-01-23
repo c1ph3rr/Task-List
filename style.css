@@ -1,0 +1,22 @@
+body{
+    background-image: url('sky.jpeg');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.opacity{
+    opacity: .8;
+}
+
+.changeView{
+    float: right;
+    padding-top: 5px;
+    padding-right: 10px;
+    margin-right: 20px;
+}
+
+.changeView h6{
+    margin-left: 20px;
+    padding-bottom: 10px;
+}
+
