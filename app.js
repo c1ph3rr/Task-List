@@ -4,6 +4,9 @@ const taskInput=document.querySelector('#task');
 const clearBtn=document.querySelector('#clrBtn');
 const main=document.querySelector('#main');
 const header=document.querySelector('#h5');
+const body=document.querySelector('#body');
+const list=document.querySelector('#list');
+
 
 
 taskEvent();
@@ -26,12 +29,12 @@ function addList(e){
     else {
         const li=document.createElement('li');
 
-        if(flag===1)
-            li.className='collection-item blue-grey darken-1';
-        else {
-            li.className='collection-item ';
-        }
-
+        // if(flag===1)
+        //     li.className='collection-item blue-grey darken-1';
+        // else {
+        //     li.className='collection-item ';
+        // }
+         li.className='collection-item';
         li.appendChild(document.createTextNode(taskInput.value));
 
         const link=document.createElement('a');
@@ -132,6 +135,8 @@ function toggle(){
         main.className+=" blue-grey darken-1";
         main.firstElementChild.className+=" white-text";
         header.className="white-text";
+        body.className="changeWall";
+        // list.className+=" white-text";
         
     }
     else{
@@ -139,6 +144,8 @@ function toggle(){
         main.className="card opacity";
         main.firstElementChild.className="card-content";
         header.className="card-title";
+        body.className="";
+        // list.className="collection";
     }
 }
 
