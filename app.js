@@ -55,10 +55,10 @@ function addList(e){
 
 function storeTask(tk){
     let tasks;
-    if(localStorage.getItem('tasks')===null)
+    if(localStorage.getItem('tasks')===null) //check if local storage has some value
         tasks=[];
     else
-        tasks=JSON.parse(localStorage.getItem('tasks'));
+        tasks=JSON.parse(localStorage.getItem('tasks')); //if so append the next value 
 
     tasks.push(tk);
 
