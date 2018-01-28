@@ -28,19 +28,24 @@ function addList(e){
     }
     else {
         const li=document.createElement('li');
+        let checkBox=document.createElement('input');
 
         // if(flag===1)
         //     li.className='collection-item blue-grey darken-1';
-        // else {
+        // else 
         //     li.className='collection-item ';
         // }
-         li.className='collection-item';
+
+
+        li.className='collection-item ';
         li.appendChild(document.createTextNode(taskInput.value));
 
         const link=document.createElement('a');
         link.className='delete-item secondary-content';
         link.innerHTML='<i class="fa fa-remove"></i>';
+
         li.appendChild(link);
+       
 
         taskList.appendChild(li);
 
@@ -149,3 +154,30 @@ function toggle(){
     }
 }
 
+function clock(){
+
+    let time=new Date();
+    let hour=time.getHours();
+    let minute=time.getMinutes();
+    let second=time.getSeconds();
+    
+    if(hour>12) 
+        hour-=12;
+        
+    if(hour<10)
+        hour="0"+hour;
+    
+    if(minute<10)
+        minute="0"+minute;
+    
+    if(second<10)
+        second="0"+second;
+    
+    
+    document.querySelector('#hr').innerHTML=hour;
+    document.querySelector('#min').innerHTML=":"+minute;
+    document.querySelector('#sec').innerHTML=":"+second;
+    
+    }
+    
+    setInterval(clock,1000);

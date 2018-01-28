@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
 body{
-    background-image: url('sky.jpeg');
+    background-image: url('./Images/sky.jpeg');
     background-size:cover;
     background-repeat: no-repeat;
 }
@@ -21,8 +23,29 @@ body{
 }
 
 .changeWall{
-    background-image: url('beach.jpeg');
+    background-image: url('./Images/beach.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
+.clock{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    float: left;
+    margin: 20px 0 0 40px;
+    background-color: rgb(182, 178, 178);
+    width: 190px;
+    text-align: center; 
+}
+
+
+
+@media(max-width: 1023px){
+    body{
+        background-size: auto;
+    }
+
+    .changeWall{
+        background-size: auto;
+    }
+}
